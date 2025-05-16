@@ -147,6 +147,12 @@ Built on a Power Pivot data model that integrates `dim_customer`, `dim_market`, 
 
 13. **Finalize Formatting**
 
+    * Apply conditional formatting to highlight over-/under-performance.
+    * Adjust fonts, borders, and slicer styles for clarity.
+
+
+> **Note:** Row and column names may differ; adjust to align with your mock-up.
+
 
 ---
 
@@ -191,13 +197,6 @@ Built on a Power Pivot data model that integrates `dim_customer`, `dim_market`, 
   * Use conditional formatting (highlights, data bars) and consistent styling for clarity and emphasis
 
 
----
-
-    * Apply conditional formatting to highlight over-/under-performance.
-    * Adjust fonts, borders, and slicer styles for clarity.
-
-
-> **Note:** Row and column names may differ; adjust to align with your mock-up.
 ---
 
 ### Report by:
