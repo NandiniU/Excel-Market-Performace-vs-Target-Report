@@ -147,6 +147,52 @@ Built on a Power Pivot data model that integrates `dim_customer`, `dim_market`, 
 
 13. **Finalize Formatting**
 
+
+---
+
+### 🔧 Excel Tools & Techniques Used
+
+* **Power Query (ETL)**
+
+  * Extract, cleanse, and transform `dim_customer`, `dim_market`, `dim_product`, `fact_sales_monthly`, and `ns_targets_2021` CSVs
+  * Remove duplicates, validate values, and standardize formats before loading into the data model
+
+* **Power Pivot Data Modeling**
+
+  * Import all dimension and fact tables into a star-schema model
+  * Define relationships:
+
+    * `fact_sales_monthly[customer_code]` → `dim_customer[customer_code]`
+    * `fact_sales_monthly[product_code]` → `dim_product[product_code]`
+    * `dim_customer[market]` → `dim_market[market]`
+    * `ns_targets_2021[market]` → `dim_market[market]`
+    * `ns_targets_2021[date]` → `dim_date[Date]`
+
+* **DAX Calculations & Measures**
+
+  * Create annual Net Sales measures (`NetSales_2019`, `NetSales_2020`, `NetSales_2021`)
+  * Define Target measure (`Target_2021 := SUM(ns_targets_2021[ns_target])`)
+  * Calculate Gap (`Gap_2021 := [NetSales_2021] - [Target_2021]`) and % Achievement (`PctAchieved := DIVIDE([Gap_2021], [Target_2021], 0)`)
+
+* **Date Table Construction**
+
+  * Generate `dim_date` in Power Query using a date series formula
+  * Add `FY Month` and `FY Year` columns to align with AtliQ’s Sept–Aug fiscal year
+
+* **PivotTable & Slicers**
+
+  * Build interactive PivotTables from the data model
+  * Add slicers/filters for Region, Division, and other hierarchies
+
+* **Visualization & Formatting**
+
+  * Insert Line Charts for trend analysis directly from PivotTable cells
+  * Apply custom number formats (e.g., `0.0,,"M"` for millions) and currency settings
+  * Use conditional formatting (highlights, data bars) and consistent styling for clarity and emphasis
+
+
+---
+
     * Apply conditional formatting to highlight over-/under-performance.
     * Adjust fonts, borders, and slicer styles for clarity.
 
@@ -154,3 +200,9 @@ Built on a Power Pivot data model that integrates `dim_customer`, `dim_market`, 
 > **Note:** Row and column names may differ; adjust to align with your mock-up.
 ---
 
+### Report by:
+
+- **Author:** *Nandini Upadhyay*
+- **Date:** *May 2025*
+
+---
