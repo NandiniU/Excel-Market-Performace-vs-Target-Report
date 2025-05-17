@@ -151,8 +151,13 @@ Built on a Power Pivot data model that integrates `dim_customer`, `dim_market`, 
     * Adjust fonts, borders, and slicer styles for clarity.
 
 
-> **Note:** Row and column names may differ; adjust to align with your mock-up.
 
+> **Note:**
+> 
+> -   Ensure all files reside in the same folder; changing any file path may cause connection errors.
+>     
+> -   File names may differ based on your environment—update connections accordingly.
+>
 
 ---
 
